@@ -1,3 +1,5 @@
+# PythonREDay18
+Presentation on introducing more intermediate python syntax for those new-er to the language.
 Find on the web: [github.com/jakeschurch/PythonREDay18](github.com/jakeschurch/PythonREDay18)
 
 Jake Schurch
@@ -91,7 +93,6 @@ evenNums = [num for num in range(11) if num %2 == 0]
 ### Error Handling
 Sometimes things go wrong in Python. That's ok - why we have general **error handling**.
 Error handling allows us from step out of a program's execution flow to undo operations or rollback part of our program.
-[Python - More on Error Handling](https://www.tutorialspoint.com/python/python_exceptions.htm)
 
 #### Try-Except Block
 ```python
@@ -106,11 +107,14 @@ except ZeroDivisionError:
 # print(num)
 # ...can we print num at this block?
 ```
+Also can use a blank `except` block to catch any error, but...
+***
 ### Try-Except-Else Block
-Allows for conditional 
+Allows for conditional error handling
 ```python
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 def divide(a, b):
     return a/b
 try: 
@@ -119,12 +123,65 @@ except ZeroDivisionError:
     print("You cannot divide by 0!")
 else:
     print(num)
-# ...can we print num at this block?
 ```
 ***
+### Try-Finally Block
+To execute code that needs to be ran regardless of an error, add a `finally` block...this code will always execute.
+Use error-handling to deal with exceptions and allow our code to continue to run the rest of the code.
+
+To go back to our divide example:
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+def divide(a, b):
+    try:
+        num = a / b
+    except ZeroDivisionError:
+        print("You cannot divide by 0!")
+        num = 0  # or maybe Null - it's up to you!
+    finally:
+        return num
+# num will be returned by divide regardless of whether there is an error or not.
+```
+[see more on error handling & exceptions...](https://www.tutorialspoint.com/python/python_exceptions.htm)
+***
+
 ### PEP 484
-TODO
+The PEP (Python Enhancement Proposal) #484 allows for type hinting. This allows us to annotate arguments and outputs of a function for _more idiomatic_ code (especially for those that are not familliar with your code).
+
+Example of a function without type hinting: 
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+def add(a, b):
+    return a + b
+    
+"""easily allow us to:
+>>> foo = add('hello ', 'world')
+print(foo)
+Output: 'hello world'
+or:
+>>> bar = add(1, 2)
+>>> print(bar)
+Output: 3
+"""
+```
+Type hinting may be a good idea in your Python code because Python is a dynamic-typed language; which means that we do not need to determine the type of a variable when we declare it.
+
+With type hinting:
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+def add(a: int, b: int) -> int:
+    return a + b
+```
+Note that this does not make python static-typed, but acts only as a **hint** rather than a requirement.
+
+[see more on PEP 484...](https://www.python.org/dev/peps/pep-0484/)
+***
+
 ### Decorators
-TODO
-### Further Reading 
-TODO
