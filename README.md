@@ -1,6 +1,6 @@
 # PythonREDay18
 Presentation on introducing more intermediate python syntax for those new-er to the language.
-Find on the web: [github.com/jakeschurch/PythonREDay18](github.com/jakeschurch/PythonREDay18)
+Find on the web: [github.com/jakeschurch/PythonREDay18](https://www.github.com/jakeschurch/PythonREDay18)
 
 Jake Schurch
 3/23/18
