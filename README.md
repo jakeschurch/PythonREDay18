@@ -34,7 +34,7 @@ We just used 6 lines _(whitespace included)_ of python code in order to make a n
 Can this be done better? Yes, using **list comprehension** (lc)
 ***
 ##### What is lc?
-Can be thought of as flipping a python for-loop into a one-liner statement:
+Can be thought of as flipping a python for-loop statement into a one-liner statement:
 
 ```python
 #!/usr/bin/env python3
@@ -45,7 +45,7 @@ strings = [str(num) for num in numbers]
 # >>> print(strings) 
 # Output: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9' '10']
 ```
-That's cool and all, but what if we wanted to filter the list using an if-statement: **No Problem.**
+That's cool and all, but what if we wanted to filter the list using an if-statement? - **No Problem.**
 
 Using a regular for-if-loop:
 ```python
@@ -148,7 +148,7 @@ def divide(a, b):
 ***
 
 ### PEP 484
-The PEP (Python Enhancement Proposal) 484 allows for type hinting. This allows us to annotate arguments and outputs of a function for _more idiomatic_ code (especially for those that are not familliar with your code).
+The PEP (Python Enhancement Proposal) 484 allows for type hinting. This allows us to annotate function/class arguments and outputs for _more idiomatic_ code (especially for those that are not familliar with your code).
 
 Example of a function without type hinting: 
 
